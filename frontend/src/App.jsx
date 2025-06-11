@@ -1,7 +1,9 @@
 // src/App.jsx
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-import ProductList from './components/ProductList'; // Importamos nosso novo componente
+import ProductList from './components/ProductList'; // Listagem de itens em estoque
+import ProductForm from './components/ProductForm'; // Formulario para adição de itens 
+
 
 function App() {
   return (
@@ -22,6 +24,7 @@ function App() {
             <Route path="/" element={<h2>Bem-vindo ao Sistema PDV</h2>} />
             {/* Quando a URL for "/products", mostre nosso componente ProductList. */}
             <Route path="/products" element={<ProductList />} />
+            <Route path="/products/new" element={<ProductForm />} />
           </Routes>
         </main>
       </div>

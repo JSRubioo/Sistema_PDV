@@ -1,6 +1,7 @@
 // src/components/ProductList.js
 import React, { useState, useEffect } from 'react';
 import axios from 'axios'; // Importamos o axios para fazer a "ponte" com a API
+import {Link} from 'react-router-dom'; // Importamos o Link para navegação
 
 function ProductList() {
   // 'useState' cria um "estado" para guardar nossa lista de produtos.
@@ -25,8 +26,13 @@ function ProductList() {
 
   // O 'return' define o que será renderizado na tela (o HTML).
   return (
+    
     <div>
       <h1>Lista de Produtos</h1>
+      {/* 2. ADICIONE ESTE BOTÃO/LINK */}
+      <Link to="/products/new">
+        <button style={{ marginBottom: '20px' }}>Adicionar Novo Produto</button>
+      </Link>
       <table border="1" style={{ width: '90%', borderCollapse: 'collapse' }}>
         <thead>
           <tr style={{ backgroundColor: '#0d0d0d' }}>
