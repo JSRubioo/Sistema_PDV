@@ -25,6 +25,8 @@ function App() {
             {/* Quando a URL for "/products", mostre nosso componente ProductList. */}
             <Route path="/products" element={<ProductList />} />
             <Route path="/products/new" element={<ProductForm />} />
+            <Route path="/products/edit/:productId" element={<ProductForm />} />
+
           </Routes>
         </main>
       </div>

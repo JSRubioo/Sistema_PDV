@@ -29,7 +29,7 @@ function ProductList() {
     
     <div>
       <h1>Lista de Produtos</h1>
-      {/* 2. ADICIONE ESTE BOTÃO/LINK */}
+      {/* Botão novo produto */}
       <Link to="/products/new">
         <button style={{ marginBottom: '20px' }}>Adicionar Novo Produto</button>
       </Link>
@@ -39,6 +39,7 @@ function ProductList() {
             <th style={{ padding: '12px', border: '1px solid #ddd' }}>Nome</th>
             <th style={{ padding: '12px', border: '1px solid #ddd' }}>Preço</th>
             <th style={{ padding: '12px', border: '1px solid #ddd' }}>Estoque</th>
+            <th style={{ padding: '12px', border: '1px solid #ddd' }}>Ações</th>
           </tr>
         </thead>
         <tbody>
@@ -48,12 +49,17 @@ function ProductList() {
               <td style={{ padding: '12px', border: '1px solid #ddd' }}>{product.name}</td>
               <td style={{ padding: '12px', border: '1px solid #ddd' }}>R$ {product.price}</td>
               <td style={{ padding: '12px', border: '1px solid #ddd' }}>{product.stock}</td>
+          <td style={{ padding: '12px', border: '1px solid #ddd' }}>
+                <Link to={`/products/edit/${product.id}`}>
+                  <button>Editar</button>
+                </Link>
+              </td>
             </tr>
           ))}
         </tbody>
       </table>
     </div>
-  );
+);
 }
 
 export default ProductList;
